@@ -2,6 +2,9 @@
 .DS_Store
 Thumbs.db
 
+# วิดีโอใหญ่เกิน 100MB (GitHub limit)
+video/tucadonka mos.mp4
+
 # Editor
 .vscode/
 .idea/

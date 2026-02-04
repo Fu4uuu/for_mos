@@ -222,7 +222,7 @@
                 <div class="video-box">
                     <video id="rightVideo" controls playsinline>
                         <!-- path ตามที่อยู่ในรูปภาพ -->
-                        <source src="video/TUCA DONKA + HAKARI DANCE.mp4" type="video/mp4">
+                        <source src="tucadonka mos.mp4" type="video/mp4">
                         Browser ไม่รองรับวิดีโอ
                     </video>
                 </div>
@@ -231,28 +231,5 @@
         </div>
 
     </div>
-
-    <script>
-        function startPrank() {
-            document.getElementById('loginBox').style.display = 'none';
-            
-            var prankBox = document.getElementById('prankBox');
-            prankBox.style.display = 'flex'; 
-
-            // สั่งเล่นวิดีโอไฟล์ในเครื่อง (ซ้าย)
-            var leftVideo = document.getElementById('localVideo');
-            if(leftVideo) {
-                leftVideo.play().catch(e => console.log("Left video auto-play blocked: " + e));
-            }
-
-            // สั่งเล่นวิดีโอไฟล์ในเครื่อง (ขวา)
-            var rightVideo = document.getElementById('rightVideo');
-            if(rightVideo) {
-                rightVideo.currentTime = 58; // ตั้งเวลาเริ่มเล่นที่วินาทีที่ 58
-                rightVideo.play().catch(e => console.log("Right video auto-play blocked: " + e));
-            }
-        }
-    </script>
-
 </body>
 </html>
