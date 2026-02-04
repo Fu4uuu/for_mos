@@ -134,13 +134,7 @@
             aspect-ratio: 16 / 9; 
         }
 
-        .video-label {
-            color: white;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-            text-align: center;
-            width: 100%;
-        }
+        /* video-label ถูกลบออกตามโค้ดที่คุณให้มา */
 
         video { 
             width: 100%; 
@@ -184,7 +178,7 @@
     </style>
 </head>
 <body>
-    <!-- v=20250203-2 (ดูบรรทัดนี้ใน View Source ถ้าเห็นเลขใหม่ = หน้าเพจอัปเดตแล้ว) -->
+    <!-- v=20250203-2 -->
 
     <!-- 1. กล่อง Login -->
     <div class="login-container" id="loginBox">
@@ -217,12 +211,12 @@
                 </div>
             </div>
 
-            <!-- ฝั่งขวา: วิดีโอจากไฟล์ (เปลี่ยนจาก YouTube) -->
+            <!-- ฝั่งขวา: วิดีโอจากไฟล์ (ชื่อไฟล์ใหม่ตามที่คุณใส่มา) -->
             <div class="video-column">
                 <div class="video-box">
                     <video id="rightVideo" controls playsinline>
-                        <!-- path ตามที่อยู่ในรูปภาพ -->
-                        <source src="tucadonka mos.mp4" type="video/mp4">
+                        <!-- เช็ค path นี้ดีๆ นะครับ ถ้าไฟล์อยู่ในโฟลเดอร์ video ต้องเติม video/ ข้างหน้า -->
+                        <source src="TUCA DONKA + HAKARI DANCE 4k _ LONG VERSION.mp4" type="video/mp4">
                         Browser ไม่รองรับวิดีโอ
                     </video>
                 </div>
@@ -231,5 +225,28 @@
         </div>
 
     </div>
+
+    <script>
+        function startPrank() {
+            document.getElementById('loginBox').style.display = 'none';
+            
+            var prankBox = document.getElementById('prankBox');
+            prankBox.style.display = 'flex'; 
+
+            // สั่งเล่นวิดีโอไฟล์ในเครื่อง (ซ้าย)
+            var leftVideo = document.getElementById('localVideo');
+            if(leftVideo) {
+                leftVideo.play().catch(e => console.log("Left video auto-play blocked: " + e));
+            }
+
+            // สั่งเล่นวิดีโอไฟล์ในเครื่อง (ขวา)
+            var rightVideo = document.getElementById('rightVideo');
+            if(rightVideo) {
+                rightVideo.currentTime = 58; // ตั้งเวลาเริ่มเล่นที่วินาทีที่ 58
+                rightVideo.play().catch(e => console.log("Right video auto-play blocked: " + e));
+            }
+        }
+    </script>
+
 </body>
 </html>
