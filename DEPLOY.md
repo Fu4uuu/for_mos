@@ -52,3 +52,23 @@ git push -u origin main
 
 - Repo: `https://github.com/YOUR_USERNAME/YOUR_REPO`
 - หน้าเว็บ (หลังเปิด Pages): `https://YOUR_USERNAME.github.io/YOUR_REPO/`
+
+---
+
+## ถ้าไฟล์บน GitHub อัปเดตแล้ว แต่หน้าเพจยังเป็นเวอร์ชันเก่า
+
+1. **เช็กการตั้งค่า Pages**
+   - เข้า repo → **Settings** → **Pages**
+   - ต้องเป็น **Source: Deploy from a branch**
+   - **Branch:** เลือก **main** (ไม่ใช่ gh-pages)
+   - **Folder:** เลือก **/ (root)** (ไม่ใช่ /docs)
+   - กด **Save** อีกครั้ง (บังคับให้ deploy ใหม่)
+
+2. **เช็กว่าโหลดเวอร์ชันล่าสุด**
+   - เปิด https://fu4uuu.github.io/for_my_friend/
+   - กด **Ctrl+U** (View Page Source)
+   - หาบรรทัด `<!-- v=20250203-2 ...` ถ้าเห็นเลขนี้ = หน้าเพจอัปเดตแล้ว  
+   - ถ้าไม่เห็น = ยัง cache อยู่ → ลอง **Ctrl+Shift+R** หรือเปิดใน Incognito
+
+3. **เปิดด้วย URL เติม query (หลีก cache)**
+   - ลองเปิด: `https://fu4uuu.github.io/for_my_friend/?nocache=1`
